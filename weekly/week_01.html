@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+	<!-- HEAD -->
+	<head>
+		<title>Erebus Weekly - Week 01</title>
+
+		<meta charset="utf-8">
+
+		<meta name="description" 	content="Erebus Design Weekly Journal">
+		<meta name="author" 		content="Derjyn">
+		<meta name="keywords" 		content="nunchucks,nunchaku,chainsticks,chuka sticks,karate sticks">
+		<meta name="viewport" 		content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.2.4/gridlex.min.css">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<!-- /HEAD -->
+
+	<!-- BODY -->
+	<body>
+		<header class='grid-center'>
+			<div class='col-2'><img src="edg_logo_96.png"></div>
+			<div class='col-10'>
+				<h1><a href="index.html">Erebus Weekly</a></h1>
+			</div>
+		</header>
+
+		<main class='grid-center'>
+			<section class='col'>
+				<h3>Erebus Weekly - Week 01 - 02.24.2017</h3>
+				<p>
+					Welcome to the Erebus Weekly, Week 01. Quite a few random things were accomplished this week,
+					mostly getting organized (not much to <i>see</i> here), but also a few handy assets were
+					developed. I'll just jump right into it...
+				</p>
+
+				<div class='spacer'></div>
+
+				<h5>THIS</h5>
+				<p>
+					Yeah, literally, <i>this</i>. Developed the HTML/CSS and other assets for the Erebus Weekly, as
+					well as whipping up Week 01's entry! The Erebus Weekly will	be useful for tracking our progress
+					and keeping our community (do we even have one?) up to date.
+				</p>
+
+				<h5>Internal Organization (giggity)</h5>
+				<p>
+					Lot's of organization on the backend (giggity again), with a lot more to do yet. Various assets,
+					projects, etc. were pruned or archived, while current and actual useful stuff was organized better.
+					Tons of resources were updated or at the least, cleaned up to be easier to use. Too much to list,
+					and it wouldn't really affect anyone outside of my crazy OCD ass anyhow. Just know that this bit
+					will help efficiency AND sanity.
+				</p>
+
+				<h5>ED Logo Love</h5>
+				<p>
+					A little bit of kindness was imparted on the Erebus Design logo. We now have 4 sizes available
+					for quick cheating (copy/paste) into our designs: 256px, 128px, 96px, and 48px. There was a
+					64px version as well, but he ran away with the spoon. <a href="week_01_assets/ed_logo_preview.png" target="_blank">
+					Check it out.</a>
+				</p>
+
+				<h5>MatCap Studio</h5>
+				<p>
+					Utilizing blender and pent up rage, a nifty matcap generation pipeline was created. MatCap stands
+					for "material capture", and is a way to quickly get visual feedback about the surface of your 3D
+					models. Rather than having to calculate lighting and reflections, this data is approximated
+					(faked, rather) using a generated matcap image.
+					<a href="week_01_assets/matcap_001.png" target="_blank">Here is an example of a matcap</a>. Also,
+					<a href="week_01_assets/matcap_ss_overview.png" target="_blank">here a screenshot</a> of a bunch
+					of monkey heads with some of the matcaps generated.
+				</p>
+				<p>
+					As well as that matcap generation thingy developed for blender, a slick material for utilizing
+					those matcaps was created in Unreal Engine. For the most part, the result is 1:1 with what you
+					see in blender, sRGB and tonemapping aside. This (growing) library of matcaps will be useful
+					for modeling/sculpting, debugging, and blockout sessions. Also, a blueprint actor was developed
+					for easier showcasing of the matcap library. <a href="week_01_assets/egt_matcap_bp.jpg" target="_blank">
+					Here's a screenshot of that</a>. Suzanne rotates and the matcaps cycle through at tweakable rates. Cool.
+				</p>
+
+				<h5>EGT Rework (part 7.3)</h5>
+				<p>
+					Don't be thrown off by that title. It's total bullshit. EGT (Erebus Game Template) however, is not
+					total bullshit. A cleaner base was built as a jumpoff (I'm actually starting to call EGT a boilerplate)
+					for UE projects. Here is a bulleted list of <i>some</i> of the magic (because both magic and bulleted
+					lists are awesome):
+				</p>
+				<ul>
+					<li>Sane and optimized editor/project settings</li>
+					<li>Useful plugins compiled (for 4.15), tested and included</li>
+					<li>Character controller with 1st and 3rd person camera</li>
+					<li>Base for various systems initialized</li>
+					<li>Core/common materials initialized</li>
+				</ul>
+				<p>
+					Now, there is still a hell of a lot to do with EGT before we can call it a stable boilerplate for our UE
+					projects, but even now, it's a nice fast start with some common settings and plugins already set up for us.
+					In the future, this efficiency will rise with the addition of more tools and assets that are commonly used
+					or just very helpful. More on that in some other area. It's simply too much to go into for the Weekly.
+				</p>
+
+				<h5>UPB Action</h5>
+				<p>
+					Ultra Puck Battle got some attention this week as well, dealing mostly with organization. Having moved the
+					whole toolset over to a completely free and/or open source ecosphere caused a bit of havoc. Good havoc,
+					though! Outside	of our launch platform (Steam, itch.io, etc) and Unreal Engine licensing/royalty costs, we
+					won't have any fees to worry about. The idea of having to pay for so many little tools based on our success
+					and all that jazz, is a serious headache. Well, that headache is now gone. Yay!
+				</p>
+				<p>
+					The various systems/controllers that build up a brunt of UPB have been further optimized and organized as
+					well, particularly in the way they communicate with each other and the various pieces in the game (such as
+					the paddles, puck, etc). It is now possible for any blueprint to get the frequency values from the audio
+					controller,	simply by adding a component and fetching the frequency structure (or individual float values).
+				</p>
+				<p>
+					The arena design has had a makeover, yet again. This is due to moving over to blender, mostly. The final
+					<i>vision</i> for the arena is baked in, it's getting the actual assets produced that is taking so much
+					time. One of the concepts being put to work, are <b>arena detail elements</b>, or an ADE for quick internal
+					nerdiness. An ADE has a specific size constraint, with (currently) 3 sizes: small, medium, large. An ADE
+					has a mount point and default transformation, allowing for an ADE to be placed in the arena at corresponding
+					ADE mount points.
+				</p>
+				<p>
+					An example might be a light, a small light to be precise. The model and it's orientation are built to
+					specification for a small ADE, and an ADE blueprint will reference this mesh. Now the arena controller will
+					know of all the available small, medium and large ADEs, and will procedurally place ADEs at corresponding
+					points in the arena. We can also manually specify ADEs at mount points in the arena, of course. This system
+					will allow for faster arena design when we start working on new and/or alternate versions of the arena.
+				</p>
+				<p>
+					On of the ADEs developed for testing while developing this system, was a sound visualizer of sorts, meant
+					to represent a futuristic subwoofer. Feeding off the sub-bass frequency, it bumps a holographic effect to
+					the beat. This ADE was a large type, and the plan is to develop medium and small "speakers" in the same
+					style for the other 6 frequencies. <a href="week_01_assets/upb_ade_demo.gif" target="_blank">Here is an
+					animated GIF</a> of	that ADE. Note that the holographic bump distance, colors, etc are all tweakable.
+				</p>
+
+				<h5>Closing Time</h5>
+				<p>
+					Well that about wraps this week up. There were plenty of other little bits and bobs that were created or
+					worked on, but those things are still too young or not at a level worth talking about or showing off yet.
+					Rest assured that they will find their way into future Weekly entries. We have plenty more magic and gold to
+					produce! Until next time...
+				</p>
+			</section>
+		</main>
+
+		<footer class='grid-center'>
+			<div class='col-4'></div>
+			<div class='col'>
+				<small>Content Copyright &copy; 2017</small>
+			</div>
+			<div class='col-4'></div>
+		</footer>
+	</body>
+	<!-- /BODY -->
+
+	<!-- SCRIPTS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<!-- /SCRIPTS -->
+</html>
+
