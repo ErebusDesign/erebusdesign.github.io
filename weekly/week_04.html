@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+	<!-- HEAD -->
+	<head>
+		<title>Erebus Weekly - Week 04</title>
+
+		<meta charset="utf-8">
+
+		<meta name="description" 	content="Erebus Weekly - Week 04">
+		<meta name="author" 			content="Derjyn">
+		<meta name="keywords" 		content="nunchucks,nunchaku,chainsticks,chuka sticks,karate sticks">
+		<meta name="viewport" 		content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gridlex/2.2.4/gridlex.min.css">
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<!-- /HEAD -->
+
+	<!-- BODY -->
+	<body>
+		<header class='grid-center'>
+			<div class='col-2'><a href="../index.html"><img src="edg_logo_96.png" alt="ED Home"></a></div>
+			<div class='col-10'>
+				<h1><a href="index.html">Erebus Weekly</a></h1>
+			</div>
+		</header>
+
+		<main class='grid-center'>
+			<section class='col'>
+				<h3>Erebus Weekly - Week 04 - 03.17.2017</h3>
+				<p>
+					Welcome to the Erebus Weekly, Week 04. Work started on some UI love. Well, love and hate. I've been
+					looking ahead towards character design workflows, and getting characters into Unreal Engine from makehuman
+					is a goal. Adobe/Mixamo	decided to "drop" support for Unreal Engine, probably because they love Unity
+					or some shit (<i>I don't actually know, I just assume the worst</i>). So I won't supporting	that
+					toolchain/process/madness anymore. Plus, makehuman is pretty frickin' sweet. I was using it years ago,
+					and	am glad to see it's still around.
+				</p>
+
+				<div class='spacer'></div>
+
+				<h5>EGT UI</h5>
+				<p>
+					Let me tell ya, <a href="https://docs.unrealengine.com/latest/INT/Engine/UMG/" target="_blank">UMG</a>
+					is pretty interesting. A lot of gotchas and far too many different ways	to lay out your UI.
+					I knew this was going to be a lot of work, so finally bit the bullet and started working on it.
+					I have always been a fan of minimalism in graphic design, and that style fits the goals in developing
+					Erebus Game Template. I looked to Google's <a href="https://material.io/" target="_blank">Material Design</a>
+					specs for inspiration, as I agree with a lot of their design choices.
+				</p>
+				<p>
+					I didn't want to completely mirror the Material specs, but definitely wanted to pull some of the bits out.
+					One of those, being their vast icon library. This in itself turned out to be a beast. Unreal Engine, at
+					least outside	of raw C++, doesn't support drawing the unicode characters to produce the icons. You can
+					however, copy the character	itself... sorta. My first attempt at making an easy-to-use UMG icon solution, was
+					to utilize the newly introduced (as of 4.15) map (or dictionary, TMap if you've been using C++ in UE). I
+					hoped to add in key/value pairs into an	"IconMap" variable, with a name that mirrored Google's naming convention,
+					for each icon. An issue arose though, which I should probably work up	a bug report for. It seemed	that any more
+					than 7 key/value pairs in the map just... stopped working. At least I think that's what was exploding.
+				</p>
+				<p>
+					Rather than pull my hair any longer trying to figure this issue out, I moved over to another solution. A
+					community driven web-font based on the original Material Design icon set <a href="https://materialdesignicons.com/" target="_blank">exists</a>,
+					which adds a plethora	of new custom icons. One of the cool things they supply with the download, is a handy
+					click-n-copy icon	cheatsheet page, which is currently sitting in EGT's documentation folder for quick reference.
+					When	I'm doing	any UI work and want to add an icon, I can just open that reference, find an icon I want to use,
+					and copy/paste it into a UMG text widget that references the icon web-font.
+				</p>
+				<p>
+					Again, probably sounds more
+					complicated than it really is. One thing that <i>is</i> a bit tedious, is caused by the sheer amount of icons
+					available. I wanted to have a UMG demo widget that had all the icons displayed, but right now that means copying and
+					pasting some 900+ items. I'll eventually make a script of some sort to automate this process. For now, this works
+					and it's awesome to have a clean and large library of icons available. Plus, it's all font-based, so (I think) things
+					run faster than if I were to use tons of textures, materials, or sprites to power the icon library. Another lovely
+					side-effect of using a font-based icon set? Scaling. Using bitmap-based icons will either have the damage of blurring
+					an icon when scaling up, lot's of work to have break-points to swap out different sized icon images based on resolution,
+					or hearing voices. Really distant voices, talking about brushing hair. Oh, wait... That was
+					<a href="https://www.youtube.com/watch?v=PHu5p8dpxk8" target="_blank">some ASMR</a> playing in the	background. So creepy...
+				</p>
+				<p>
+					Another thing I pulled from the Material Design specs were the
+					<a href="https://material.io/guidelines/style/color.html#color-color-palette" target="_blank">color palettes</a>.
+					I created structures and enums, as well as saved palettes in UE's color picker for each swatch set.	It'll be handy
+					to be able	to quickly pick complementary colors, and I'll probably eventually do themes as well for faster iterations
+					on UI madness. I'm also loosely adhering to some of the specs laid out for colors such as	light on dark, dark on light,
+					etc. You can find some of that stuff <a href="https://material.io/guidelines/style/color.html#color-text-background-colors" target="_blank">here</a>,
+					for example.
+				</p>
+
+				<h5>Character Design Chaos</h5>
+				<p>
+					One of the bigger parts of a game, are it's characters. Even a basic puzzle game will have characters, right?
+					Well EGT is by default humanoid-centric, and while I have man-crush on Manny the Mannequin, one of the things
+					I wanted to push towards was our own in-house generic character. Not to be so cool and original, but rather
+					to lay down the workflow process for getting characters out of a powerful tool and into UE, that was accessible
+					for everyone. Any character development process is going to lengthy, so keep that in mind if you happen
+					to jump on this bandwagon.
+				</p>
+				<p>
+					While it was pretty easy to fire up the alpha/beta/gamma of Adobe Fuse, export to Mixamo, package some animations,
+					then get a basic character running around in UE, this toolchain was never destined to last. So we're moving
+					over to an open-source toolset for this part of production. Outside of some Photoshop useage, we are nearly
+					using a completely-free toolset for all of our design and development. Hell, we <i>could</i> ditch Photoshop and
+					use any number of alternatives... But I just can't let her go.
+				</p>
+				<p>
+					Anyways, enter <a href="http://www.makehuman.org/" target="_blank">makehuman</a>. MH does pretty much everything
+					Adobe Fuse does, and more. It's more akin to Poser/Daz3D in it's character detail. Plus, they apparently have
+					some early support for Unreal Engine export options right now. I'm certain that support will grow as more people
+					check makehuman out for their character design workflows.
+				</p>
+				<p>
+					Now, I've yet to actually get a character rigged up and running around, though I have exported meshes/materials
+					and had those imported and looking pretty. Hopefully within the next couple of weeks I'll have this process down.
+					I noticed there	were a couple of <a href="https://www.youtube.com/results?search_query=makehuman+to+unreal+engine+4" target="_blank">
+					tutorials</a> floating around, so if you're intested, take a crack at it! You may or may not regret it.
+				</p>
+
+				<h5>That Outro Though...</h5>
+				<p>
+					Sorry/not sorry for droning on so much this week. There was actually plenty more to blather on about, such
+					as some happenings with Ultra Puck Battle. Alas, we'll save those juicey bits for next week or whatever.
+					Until then, make sure to drink fluids. Because drinking solids just never pans out.
+				</p>
+			</section>
+		</main>
+
+		<footer class='grid-center'>
+			<div class='col-4'></div>
+			<div class='col'>
+				<small>Who is Content Copyright &copy; 2017?</small>
+			</div>
+			<div class='col-4'></div>
+		</footer>
+	</body>
+	<!-- /BODY -->
+
+	<!-- SCRIPTS -->
+	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+	<!-- /SCRIPTS -->
+</html>
