@@ -1,0 +1,334 @@
+/*
+**
+** FILE:        style.css
+** UPDATED:     01/23/2015
+** DESCRIPTION: Crosswind Logistics style
+** CREDITS:     Nathan Harris aka Derjyn
+*/
+
+/*************************************************************************************************/
+/*** HEADER **************************************************************************************/
+
+header {
+  background-color: transparent !important;
+  height: 320px;
+}
+
+header h1 {
+  align-self: stretch;
+  color: rgb(220,220,220);
+  flex-grow: 1;
+  font-size: 2.75em !important;
+  margin-top: 0.25em;
+  order: 2;
+  text-align: center;
+  text-shadow: 0 0 0.5px rgba(255,255,255,0.1);
+}
+
+header #logo {
+  background: url("logo.png") center no-repeat;
+  height: 160px;
+  margin-top: 1.75em !important;
+  order: 1;
+  width: 304px;
+}
+
+header #vid_header {
+  box-sizing: border-box;
+  display: relative;
+  height: 352px;
+  left: 0px;
+  margin-top: -352px;
+  min-width: 976px !important;
+  top: 320px;
+  -webkit-filter:
+    brightness(0.2)
+    sepia(0.2)
+    saturate(1.4)
+    grayscale(0.8)
+    hue-rotate(321deg)
+    contrast(1);
+  filter:
+    brightness(0.2)
+    sepia(0.2)
+    saturate(1.4)
+    grayscale(0.8)
+    hue-rotate(321deg)
+    contrast(1);
+  z-index: -2;
+}
+
+/*************************************************************************************************/
+/*** NAV *****************************************************************************************/
+
+nav { background-color: rgb(40,40,40); }
+
+nav ul {
+  list-style: none;
+  margin: 0 auto;
+}
+nav ul li {
+  font-weight: bold;
+  height: 40px;
+  line-height: 24px;
+  padding: 8px !important;
+  width: 144px;
+}
+nav ul li a {
+  color: rgb(220,210,210);
+  display: block;
+}
+nav ul li a:hover i.fa, nav ul li a.active i.fa {
+  top: -4px !important;
+}
+nav ul li a i.fa {
+  font-size: 1.5em !important;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.4s;
+}
+nav ul li a.active,  nav ul li a.active i.fa {
+  color: rgb(180,0,0) !important;
+}
+
+/*************************************************************************************************/
+/*** MAIN ****************************************************************************************/
+
+main {
+  background-color: rgb(32,32,32);
+  min-height: 480px;
+}
+
+#home i, #services i, #forms i, #inquiries i {
+  color: rgb(208,208,208);
+  float: left;
+  margin-right: 8px;
+}
+#inquiries i {
+  font-size: 2.3em !important;
+}
+
+#forms-description {
+  margin-bottom: 40px;
+}
+#forms h4 {
+  line-height: 16px;
+  margin-left: 32px;
+  margin-bottom: 4px;
+  vertical-align: middle;
+}
+
+/*************************************************************************************************/
+/*** FOOTER **************************************************************************************/
+
+footer {
+  background-color: rgb(24,24,24);
+}
+footer span {
+  color: rgb(160,160,160);
+  display: block;
+  font-family: "Source Sans Pro", serif;
+  font-size: 90%;
+  font-weight: bold;
+  line-height: 1.5em;
+  text-align: center;
+  width: 100%;
+}
+footer small {
+  color: rgb(112,112,112);
+  font-family: "Source Sans Pro", serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*************************************************************************************************/
+/*** STYLE ***************************************************************************************/
+
+body {
+  background-color: rgb(8,8,8);
+  margin: 0 auto !important;
+}
+
+a, p {
+  color: rgb(224,224,224);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 1em;
+}
+p { padding: 0 2em; }
+
+ul li {
+  color: rgb(208,208,208);
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1em;
+  line-height: 1.25em !important;
+  margin-left: 1.5em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: rgb(208,208,208);
+  font-family: sans-serif;
+}
+h1 { font-size: 2em; }
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+h3 {
+  font-size: 1.17em;
+  padding: 0.5em;
+}
+h4 { font-size: 1em; }
+h5 { font-size: 0.83em; }
+h6 { font-size: 0.75em; }
+
+a {
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: rgb(255,255,255);
+  position: relative;
+  top: 0;
+}
+
+*::selection {
+  background: rgba(0,0,0,0.5);
+}
+
+
+/*************************************************************************************************/
+/*** CONTACT FORM ********************************************************************************/
+
+#contact-form { padding: 2em 2em 0 2em; }
+
+#contact-form label,
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+#contact-form ul {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  width: 720px;
+}
+#contact-form li {
+  padding: 8px;
+  position: relative;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form button {
+  background-color: rgb(64,64,64);
+  border: 1px solid rgb(80,80,80);
+  color: rgb(200,200,200);
+  font-size: 1em;
+  padding: 8px;
+}
+#contact-form label {
+  display: inline-block;
+  float: left;
+  margin-top: 4px;
+  width: 96px;
+}
+#contact-form input {
+  height: 32px;
+  width: 192px;
+}
+#contact-form textarea { width: 300px; }
+#contact-form button { margin-left: 96px; }
+
+*:focus { outline: none; }
+
+/*************************************************************************************************/
+/*** MEDIA QUERIES *******************************************************************************/
+
+@media only screen and
+(max-width: 320px),
+(max-width: 360px),
+(max-width: 384px),
+(max-width: 533px),
+(max-width: 600px),
+(max-width: 976px) {
+
+  header {
+    background-color: rgb(48,48,48) !important;
+    height: 280px !important;
+  }
+  header h1 {
+    font-size: 2em !important;
+    text-align: center;
+  }
+  header #logo {
+    margin-top: 8px;
+    margin-right: 0 !important;
+    width: 100%;
+  }
+  header #vid_header {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+
+  nav ul li {	width: 128px; }
+  nav ul li.rib { margin-right: 0 !important; }
+  nav ul li.rib:last-child { margin-bottom: 0 !important; }
+
+  main section {
+    width: 100% !important;
+    clear: right !important;
+    margin-bottom: 0;
+    margin-right: 0;
+  }
+  main aside { width: 100% !important; }
+
+  footer small {
+    font-size: 70%;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 603px) {
+  header h1 {
+    text-align: center;
+  }
+  header #logo {
+    margin-right: 0 !important;
+    width: 100%;
+  }
+
+  main section {
+    width: 100% !important;
+    clear: right !important;
+    margin-bottom: 16px;
+    margin-right: 0;
+  }
+  main aside { width: 100% !important; }
+
+  .rib img {
+    max-width: 256px;
+    height: auto;
+    padding: 16px;
+  }
+}
+
+@media only screen and
+(max-width: 320px),
+(max-width: 360px),
+(max-width: 384px) {
+  header h1 {
+    font-size: 1.5em !important;
+    text-align: center;
+  }
+}
+
+
+/*************************************************************************************************/
+/*** EOF *****************************************************************************************/
