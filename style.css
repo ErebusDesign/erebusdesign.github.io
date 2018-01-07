@@ -1,7 +1,6 @@
 /* uber powerful reset from venus */
 
-* { margin: 0; padding: 0 }
-
+* { box-sizing: border-box; margin: 0; padding: 0 }
 
 /* layout */
 
@@ -15,20 +14,15 @@ html, body {
 	padding: 10px;
 }
 
-header { height: 116px }
-header h1 { line-height: 96px !important }
-
+header { height: 136px }
+header h1 { line-height: 100px !important }
 main { min-height: calc(100vh - 220px) }
-
 footer { height: 64px }
-
-
 
 .spacer {
 	width: 100%;
 	height: 50px;
 }
-
 
 /* debug */
 /*
@@ -39,7 +33,7 @@ footer { height: 64px }
 /* typography */
 
 h1,h3,h5,p,blockquote,pre,small,ul,ul li {
-	color: #999;
+	color: rgb(173, 173, 173);
 	font-family: monospace;
 	font-style: normal;
 	font-variant: normal;
@@ -55,7 +49,7 @@ h5 {
 	font-style: italic;
 	margin-top: 20px
 }
-h5:first-of-type { maring-top: 0 }
+h5:first-of-type { margin-top: 0 }
 
 p,blockquote,pre,ul {
 	font-weight: 400;
@@ -76,6 +70,7 @@ pre,small { font-size: 12px }
 footer small {
 	display: block;
 	text-align: center;
+	width: 100%;
 }
 
 a {
@@ -87,4 +82,4 @@ a:hover { color: #323232 }
 
 /* color */
 
-body { background-color: #666 }
+body { background-color: rgb(83, 83, 83) }
