@@ -39,7 +39,7 @@
 				<h5>THIS</h5>
 				<p>
 					Yeah, literally, <i>this</i>. Developed the HTML/CSS and other assets for the Erebus Weekly, as
-					well as whipping up Week 001's entry! The Erebus Weekly will	be useful for tracking our progress
+					well as whipping up Week 001's entry! The Erebus Weekly will be useful for tracking our progress
 					and keeping our community (do we even have one?) up to date.
 				</p>
 
@@ -67,7 +67,7 @@
 					models. Rather than having to calculate lighting and reflections, this data is approximated
 					(faked, rather) using a generated matcap image.
 					<a href="assets/week_001/matcap_001.png" target="_blank">Here is an example of a matcap</a>. Also,
-					<a href="assets/week_001/matcap_ss_overview.png" target="_blank">here a screenshot</a> of a bunch
+					<a href="assets/week_001/matcap_ss_overview.png" target="_blank">here is a screenshot</a> of a bunch
 					of monkey heads with some of the matcaps generated.
 				</p>
 				<p>
@@ -104,42 +104,42 @@
 				<p>
 					Ultra Puck Battle got some attention this week as well, dealing mostly with organization. Having moved the
 					whole toolset over to a completely free and/or open source ecosphere caused a bit of havoc. Good havoc,
-					though! Outside	of our launch platform (Steam, itch.io, etc) and Unreal Engine licensing/royalty costs, we
+					though! Outside	of our launch platform (Steam, itch.io, etc.) and Unreal Engine licensing/royalty costs, we
 					won't have any fees to worry about. The idea of having to pay for so many little tools based on our success
 					and all that jazz, is a serious headache. Well, that headache is now gone. Yay!
 				</p>
 				<p>
 					The various systems/controllers that build up a brunt of UPB have been further optimized and organized as
 					well, particularly in the way they communicate with each other and the various pieces in the game (such as
-					the paddles, puck, etc). It is now possible for any blueprint to get the frequency values from the audio
+					the paddles, puck, etc.). It is now possible for any blueprint to get the frequency values from the audio
 					controller,	simply by adding a component and fetching the frequency structure (or individual float values).
 				</p>
 				<p>
 					The arena design has had a makeover, yet again. This is due to moving over to blender, mostly. The final
 					<i>vision</i> for the arena is baked in, it's getting the actual assets produced that is taking so much
-					time. One of the concepts being put to work, are <b>arena detail elements</b>, or an ADE for quick internal
+					time. One of the concepts being put to work are <b>arena detail elements</b>, or an ADE for quick internal
 					nerdiness. An ADE has a specific size constraint, with (currently) 3 sizes: small, medium, large. An ADE
 					has a mount point and default transformation, allowing for an ADE to be placed in the arena at corresponding
 					ADE mount points.
 				</p>
 				<p>
-					An example might be a light, a small light to be precise. The model and it's orientation are built to
+					An example might be a light, a small light to be precise. The model and its orientation are built to
 					specification for a small ADE, and an ADE blueprint will reference this mesh. Now the arena controller will
-					know of all the available small, medium and large ADEs, and will procedurally place ADEs at corresponding
+					know of all the available small, medium, and large ADEs and will procedurally place ADEs at corresponding
 					points in the arena. We can also manually specify ADEs at mount points in the arena, of course. This system
 					will allow for faster arena design when we start working on new and/or alternate versions of the arena.
 				</p>
 				<p>
-					On of the ADEs developed for testing while developing this system, was a sound visualizer of sorts, meant
+					One of the ADEs developed for testing while developing this system was a sound visualizer of sorts, meant
 					to represent a futuristic subwoofer. Feeding off the sub-bass frequency, it bumps a holographic effect to
-					the beat. This ADE was a large type, and the plan is to develop medium and small "speakers" in the same
+					the beat. This ADE was a large type; the plan is to develop medium and small "speakers" in the same
 					style for the other 6 frequencies. <a href="assets/week_001/upb_ade_demo.gif" target="_blank">Here is an
-					animated GIF</a> of	that ADE. Note that the holographic bump distance, colors, etc are all tweakable.
+					animated GIF</a> of	that ADE. Note that the holographic bump distance, colors, etc. are all tweakable.
 				</p>
 
 				<h5>Closing Time</h5>
 				<p>
-					Well that about wraps this week up. There were plenty of other little bits and bobs that were created or
+					Well, that about wraps this week up. There were plenty of other little bits and bobs that were created or
 					worked on, but those things are still too young or not at a level worth talking about or showing off yet.
 					Rest assured that they will find their way into future Weekly entries. We have plenty more magic and gold to
 					produce! Until next time...
